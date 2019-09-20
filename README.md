@@ -1,7 +1,26 @@
-## Thinking in React (https://reactjs.org/docs/thinking-in-react.html)
+## Project Description
+1) Name of Project: Brewvana, web dictionary of beer industry
 
-## about API
-https://punkapi.com/documentation/v2
+2) Project’s Purpose or Goal: User can navigate the information about beer from API in single-page webapp environment.
+
+3) List the absolute minimum features the project requires to meet this purpose or goal:
+
+4) User can search/select beer by ABV or IBU or Hop, malt, yeast and etc....
+
+5) User can see the details of each beer based on API information including image and short description.
+
+6) PUNK API (https://punkapi.com/documentation/v2), React.js, HTML5/CSS/JavaScript, Chart.js, Python for web crawler
+To make sure everyone can access the API reliably, each IP that makes a request has a rate limit of 3600 requests per hour.
+
+This works out at 1 req/sec. This is an initial figure, if the servers hold up I will definitely consider bumping this number.
+
+You can see what the rate limit is and how many requests are remaining by looking at the rate limit headers sent in the response.
+
+7) Chart for ABV/IBU of every beer in API
+
+8) Interface with WebCrawler for each beer using python (https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f)
+
+## Thinking in React (https://reactjs.org/docs/thinking-in-react.html)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,5 +1,8 @@
 ## Thinking in React (https://reactjs.org/docs/thinking-in-react.html)
 
+## about API
+https://punkapi.com/documentation/v2
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

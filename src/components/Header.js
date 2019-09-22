@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Header () {
+function Header (props) {
     return (
-      <h1>BREWVANA</h1>
+      <h1>{props.siteName}</h1>
     )
+}
+
+Header.propTypes = {
+  siteName: PropTypes.string.isRequired
 }
 
 // class Header extends React.Component {

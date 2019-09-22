@@ -20,6 +20,10 @@ You can see what the rate limit is and how many requests are remaining by lookin
 
 8) Interface with WebCrawler for each beer using python (https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f)
 
+## Component and Route Structure
+
+![](component.png)
+
 ## Thinking in React (https://reactjs.org/docs/thinking-in-react.html)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

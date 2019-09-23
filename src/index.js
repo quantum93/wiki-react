@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import Search from './components/Search';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
     <BrowserRouter>
       <div>
         <Route exact path="/" component={App} />
+        <Route exact path="/search" component={Search} />
       </div>
     </BrowserRouter>
   ), document.getElementById('root'));

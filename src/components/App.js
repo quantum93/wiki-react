@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Header from './Header';
-import {Route, Switch} from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
@@ -15,6 +14,19 @@ class App extends React.Component {
     const beerAmount = this.state.numBeers + 1;
     this.setState({ numBeers: beerAmount });
   };
+
+  loadBeers = (searchTerm = "random") => {
+    fetch(`https://api.punkapi.com/v2/beers/${searchTerm}`)
+    .then(data => data.json())
+    .then(beers => {
+      console.log(beers);
+    })
+    .catch(err => console.error(err));
+  };
+
+  componentDidMount() {
+    this.loadBeers();
+  }
 
   render() {
     return (

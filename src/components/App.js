@@ -11,11 +11,16 @@ class App extends React.Component {
     }
   }
 
+  incrementBeers = () => {
+    const beerAmount = this.state.numBeers + 1;
+    this.setState({ numBeers: beerAmount });
+  };
+
   render() {
     return (
       <div className="App">
       <Header siteName="BREWVANA"/>
-      <button>{this.state.numBeers} 🍺</button>
+      <button onClick={this.incrementBeers}>{this.state.numBeers} 🍺</button>
       <p>Hello World</p>
       </div>
     );

@@ -3,20 +3,15 @@ import './App.css';
 import Header from './Header';
 import {Route, Switch} from "react-router-dom";
 
-class App extends React.component {
-  constructor() {
-    super();
-    this.state = {
-      numBeers: 10
-    };
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+      <Header siteName="BREWVANA"/>
+      <p>Hello World</p>
+      </div>
+    );
   }
-
-  return (
-    <div className="App">
-    <Header siteName="BREWVANA"/>
-    <p>Hello World</p>
-    </div>
-  );
 }
 
 export default App;

@@ -12,9 +12,7 @@
 6) PUNK API (https://punkapi.com/documentation/v2), React.js, HTML5/CSS/JavaScript, Chart.js, Python for web crawler
 To make sure everyone can access the API reliably, each IP that makes a request has a rate limit of 3600 requests per hour.
 
-This works out at 1 req/sec. This is an initial figure, if the servers hold up I will definitely consider bumping this number.
-
-You can see what the rate limit is and how many requests are remaining by looking at the rate limit headers sent in the response.
+This works out at 1 req/sec. This is an initial figure, if the servers hold up I will definitely consider bumping this number. You can see what the rate limit is and how many requests are remaining by looking at the rate limit headers sent in the response.
 
 7) Chart for ABV/IBU of every beer in API
 

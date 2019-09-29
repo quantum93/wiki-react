@@ -11,7 +11,6 @@ class Search extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.router);
     const searchTerm = this.searchRef.current.value;
     this.context.router.history.push(`/search/${searchTerm}`);
   }

@@ -1,4 +1,6 @@
 body {
-  margin: 0;
-  font-family:sans-serif;
+  font-family: sans-serif;
+  background: #ffc425;
+  background: linear-gradient(to bottom, #ffc425 50%, #eaaa00 100%);
+  background-attachment: fixed;
 }

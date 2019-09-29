@@ -1,11 +1,11 @@
-import React from 'react';
-import Header from './Header';
-import PropTypes from 'prop-types';
+import React from "react";
+import Header from "./Header";
+import PropTypes from "prop-types";
 
 class Single extends React.Component {
   constructor() {
     super();
-    this.state = { beer:{}, loading:true };
+    this.state = { beer: {}, loading: true };
   }
 
   static propTypes = {
@@ -27,21 +27,42 @@ class Single extends React.Component {
       });
   };
 
+  renderGlass = beer => {
+    if (!beer.glass) return;
+    return (
+      <div className="glass">
+        <img src={`/images/glass-${beer.glass.id}.jpg`} alt={beer.name} />
+        <h3>{beer.glass.name} Glass</h3>
+      </div>
+    );
+  };
 
+  renderAbv = beer => {
+    if (!beer.abv) return;
+    return <div className="abv">ABV: {beer.abv}%</div>;
+  };
 
   render() {
 
     const { beer } = this.state;
 
-    return(
-      <div className="single-beer">
-        <div className="desc">
-          <h2>{beer.name}</h2>
-          <p>{beer.description}</p>
+    return (
+      <div>
+        <Header siteName="Beer me!" />
+        <div className="single-beer">
+          <div className="desc">
+            <h2>{beer.name}</h2>
+            <p>{beer.description}</p>
+          </div>
+
+          <div className="deets">
+            {this.renderGlass(beer)}
+            {this.renderAbv(beer)}
+          </div>
+
         </div>
       </div>
-
-    )
+    );
   }
 }
 

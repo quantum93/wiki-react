@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Search from './Search';
+import Results from './Results';
 
 class App extends React.Component {
   constructor() {
@@ -37,6 +38,7 @@ class App extends React.Component {
       <Header siteName="BREWVANA" />
       <Search />
       <button onClick={this.incrementBeers}>{this.state.numBeers} 🍺</button>
+      <Results beers={this.state.beers}  />
       <p>Hello World</p>
       </div>
     );

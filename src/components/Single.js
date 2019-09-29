@@ -73,7 +73,7 @@ class Single extends React.Component {
               : (<h3>More Info on {beer.name}</h3>)
             }
             { (beer.style) ?
-              (<p>More Info on {beer.style.description}</p>)
+              (<p>{beer.style.description}</p>)
               : (<p>{beer.description}</p>)
             }
           </div>

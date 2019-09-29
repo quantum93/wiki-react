@@ -21,6 +21,29 @@ body {
   transition: all 0.2s;
 }
 
+.beer:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 2px rgba(13,24,28,0.3);
+}
+
+.beer a {
+  text-decoration: none;
+}
+
+.beer h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.beers {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* Single Beer View */
 .single-beer {
 max-width: 500px;

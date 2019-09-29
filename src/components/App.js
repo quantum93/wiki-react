@@ -17,10 +17,12 @@ class App extends React.Component {
   };
 
   loadBeers = (searchTerm = "random") => {
-    fetch(`https://api.punkapi.com/v2/beers/${searchTerm}`)
+    fetch(`https://api.punkapi.com/v2/beers/${searchTerm}&type=beer`)
     .then(data => data.json())
     .then(beers => {
       console.log(beers);
+      const filteredBeers = beers.data.filter(beer => !!beer.labels);
+     this.setState({ beers: filteredBeers });
     })
     .catch(err => console.error(err));
   };

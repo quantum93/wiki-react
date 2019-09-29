@@ -9,6 +9,18 @@ body {
   background-attachment: fixed;
 }
 
+.beer {
+  background: #fff;
+  padding: 1rem;
+  border-top: 1.5rem solid #e13e45;
+  flex: 1 0 auto;
+  margin: 2rem;
+  overflow: hidden;
+  width: calc(33.3% - 4rem);
+  box-shadow: 0 0 10px rgba(13,24,28,0.2);
+  transition: all 0.2s;
+}
+
 /* Single Beer View */
 .single-beer {
 max-width: 500px;

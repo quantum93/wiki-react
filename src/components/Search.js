@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 
 class Search extends React.Component {
 
-  static contextTypes = {
-    router: PropTypes.object.isRequired
-  }
+  // static propTypes = {
+  //   router: PropTypes.object.isRequired
+  // }
 
   searchRef = React.createRef();
 
   handleSubmit = (e) => {
     e.preventDefault();
     const searchTerm = this.searchRef.current.value;
-    this.context.router.history.push(`/search/${searchTerm}`);
+    // console.log(this.props, searchTerm);
+    // this.setState=({})
+    // this.props.router.history.push(`/search/${searchTerm}`);
   }
 
   render() {

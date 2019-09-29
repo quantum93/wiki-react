@@ -14,12 +14,12 @@ class Single extends React.Component {
   };
 
   componentDidMount() {
-    console.log(`searching for ${this.props.match.params.beerId}`);
+    // console.log(`searching for ${this.props.match.params.beerId}`);
     this.loadBeer(this.props.match.params.beerId);
   }
 
   loadBeer = beerId => {
-    console.log(`Loading beer ${beerId}`);
+    // console.log(`Loading beer ${beerId}`);
     this.setState({ loading: true });
     fetch(`http://api.react.beer/v2/beer/${beerId}`)
       .then(data => data.json())
@@ -49,6 +49,7 @@ class Single extends React.Component {
     }
 
     const { beer } = this.state;
+    console.log(beer.style);
 
     return (
       <div>
@@ -64,6 +65,11 @@ class Single extends React.Component {
           <div className="deets">
             {this.renderGlass(beer)}
             {this.renderAbv(beer)}
+          </div>
+
+          <div className="style">
+            <h3>More Info on {beer.style.name}</h3>
+            <p>{beer.style.description}</p>
           </div>
 
         </div>

@@ -13,15 +13,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log(`mounting`);
-    console.log(this);
+    // console.log(`mounting`);
+    // console.log(this);
     const params = this.props.match.params || {};
     const searchTerm = params.searchTerm || undefined;
     this.loadBeers(searchTerm);
   }
 
   componentDidUpdate(prevProps) {
-    console.log('did update');
+    // console.log('did update');
     const currentSearchTerm = this.props.match.params.searchTerm;
     const oldSearchTerm = prevProps.match.params.searchTerm;
     if (currentSearchTerm !== oldSearchTerm) {

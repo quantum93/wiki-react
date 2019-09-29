@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import PropTypes from "prop-types";
+import Loader from "./Loader";
 
 class Single extends React.Component {
   constructor() {
@@ -43,8 +44,12 @@ class Single extends React.Component {
   };
 
   render() {
+    if (this.state.loading) {
+      return <Loader message="🍻 Beer is the answer no matter what the question is!" />;
+    }
 
     const { beer } = this.state;
+    console.log(beer.style);
 
     return (
       <div>
@@ -54,12 +59,10 @@ class Single extends React.Component {
             <h2>{beer.name}</h2>
             <p>{beer.description}</p>
           </div>
-
           <div className="deets">
             {this.renderGlass(beer)}
             {this.renderAbv(beer)}
           </div>
-
         </div>
       </div>
     );

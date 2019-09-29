@@ -1,19 +1,19 @@
-import React from 'react';
-import Header from './Header';
-import Search from './Search';
-import Results from './Results';
+import React from "react";
+import Results from "./Results";
+import Search from "./Search";
+import Header from "./Header";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      beers : [],
+      beers: [],
       loading: true
     };
   }
 
   componentDidMount() {
-    console.log('mounting');
+    console.log(`mounting`);
     console.log(this);
     const params = this.props.match.params || {};
     const searchTerm = params.searchTerm || undefined;
@@ -28,11 +28,6 @@ class App extends React.Component {
       this.loadBeers(currentSearchTerm);
     }
   }
-
-  // incrementBeers = () => {
-  //   const beerAmount = this.state.numBeers + 1;
-  //   this.setState({ numBeers: beerAmount });
-  // };
 
   loadBeers = (searchTerm = "hops") => {
     this.setState({ loading: true });
@@ -64,10 +59,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-      <Header siteName="BREWVANA" />
-      <Search />
-      <Results beers={this.state.beers} loading={this.state.loading} />
+      <div className="wrapper">
+        <Header siteName="Beer me!" />
+        <Search />
+        <Results beers={this.state.beers} loading={this.state.loading} />
       </div>
     );
   }

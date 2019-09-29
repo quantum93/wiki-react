@@ -49,7 +49,7 @@ class Single extends React.Component {
     }
 
     const { beer } = this.state;
-    console.log(beer.style);
+    console.log(beer);
 
     return (
       <div>
@@ -68,8 +68,10 @@ class Single extends React.Component {
           </div>
 
           <div className="style">
-            <h3>More Info on {beer.style.name}</h3>
-            <p>{beer.style.description}</p>
+          { (beer.style) ?
+            (<h3>More Info on {beer.style.name}</h3>)
+            : (<h3>More Info on {beer.name}</h3>)
+          }
           </div>
 
         </div>

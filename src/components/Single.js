@@ -14,16 +14,17 @@ class Single extends React.Component {
 
   componentDidMount() {
     console.log(`searching for ${this.props.match.params.beerId}`);
-    this.loadBear(this.props.match.params.beerId);
+    this.loadBeer(this.props.match.params.beerId);
   }
 
-  loadBeer = (beerId) => {
+  loadBeer = beerId => {
     console.log(`Loading beer ${beerId}`);
-    this.setState({loading:true});
+    this.setState({ loading: true });
     fetch(`http://api.react.beer/v2/beer/${beerId}`)
-    .then(data => data.json())
-    .then(res => {this.setState({beer:res.data, loading:false});
-    });
+      .then(data => data.json())
+      .then(res => {
+        this.setState({ beer: res.data, loading: false });
+      });
   };
 
 

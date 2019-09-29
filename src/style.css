@@ -1,6 +1,43 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
 body {
   font-family: sans-serif;
   background: #ffc425;
   background: linear-gradient(to bottom, #ffc425 50%, #eaaa00 100%);
   background-attachment: fixed;
+}
+
+/* Single Beer View */
+.single-beer {
+max-width: 500px;
+margin: 0 auto;
+background: #fff;
+padding: 2rem;
+}
+
+.single-beer .label {
+  width: 100%;
+}
+
+.single-beer img {
+  max-width: 100%;
+}
+
+.single-beer h3 {
+  font-size: 2rem;
+}
+
+.glass img {
+  float: left;
+  width: 200px;
+}
+
+/* Loader */
+.loader {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 100;
 }

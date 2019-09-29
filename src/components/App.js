@@ -8,8 +8,9 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      numBeers : 10
-    }
+      beers : [],
+      loading: true
+    };
   }
 
   incrementBeers = () => {

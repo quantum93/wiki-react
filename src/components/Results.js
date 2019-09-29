@@ -12,13 +12,11 @@ class Results extends React.Component {
     return(
       <div className="results">
         <div className="beers">
-          {this.props.beers.map((details, i) =>
-            <Beer details={details} key={details.id} />
-          )}
+          {this.props.beers.map((details, i) => <Beer details={details} key={details.id} />)}
         </div>
       </div>
     )
   }
-}
+};
 
 export default Results;

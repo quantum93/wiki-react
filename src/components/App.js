@@ -2,6 +2,7 @@ import React from "react";
 import Results from "./Results";
 import Search from "./Search";
 import Header from "./Header";
+import sampleData from './sampleData.json';
 
 class App extends React.Component {
   constructor() {
@@ -47,7 +48,7 @@ class App extends React.Component {
       .then(data => {
         // filter for beers with images
         const beers = data.data || [];
-        const filteredBeers = beers.filter(beer => !!beer.labels);
+        const filteredBeers = beers.filter(beer => beer.labels);
         this.setState({ beers: filteredBeers, loading: false });
         // save to local storage in case we search for this again
         localStorage.setItem(
@@ -59,6 +60,11 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(sampleData)
+    console.log(sampleData.data[0].name, sampleData.data[0].abv);
+    console.log(sampleData.data[1].name, sampleData.data[1].abv);
+    console.log(sampleData.data[9].name, sampleData.data[9].abv);
+
     return (
       <div className="wrapper">
         <Header siteName="BREWVANA" />

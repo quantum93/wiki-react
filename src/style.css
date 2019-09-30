@@ -4,13 +4,13 @@ html {
 }
 body {
   font-family: sans-serif;
-  background: #ffc425;
-  background: linear-gradient(to bottom, #ffc425 50%, #eaaa00 100%);
+  background: #c2b9a3;
+  background: linear-gradient(to bottom, #c2b9a3 50%, #eaaa00 100%);
   background-attachment: fixed;
 }
 
 .beer {
-  background: #fff;
+  background: #f0e5c7;
   padding: 1rem;
   border-top: 1.5rem solid #e13e45; /* This is color line for each beer card */
   flex: 1 0 auto;

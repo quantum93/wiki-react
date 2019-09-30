@@ -82,14 +82,8 @@ class Single extends React.Component {
           </div>
 
           <div className="style">
-            { (beer.style) ?
-              (<h3>More Info on {beer.style.name}</h3>)
-              : (<h3>More Info on {beer.name}</h3>)
-            }
-            { (beer.style) ?
-              (<p>{beer.style.description}</p>)
-              : (<p>{beer.description}</p>)
-            }
+            { (beer.style) ? (<h3>More Info on {beer.style.name}</h3>) : (<h3>More Info on {beer.name}</h3>) }
+            { (beer.style) ? (<p>{beer.style.description}</p>) : (<p>{beer.description}</p>) }
           </div>
 
         </div>

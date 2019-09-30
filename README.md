@@ -26,6 +26,12 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## About API
+Full list in BreweryDB
+
+query in postman with API key --> https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8
+
 ## Available Scripts
 
 In the project directory, you can run:

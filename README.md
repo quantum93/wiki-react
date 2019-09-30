@@ -32,6 +32,11 @@ Full list in BreweryDB
 
 query in postman with API key --> https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8
 
+for page 1, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8&p=1
+for page 2, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8&p=2
+...
+
+
 ## Available Scripts
 
 In the project directory, you can run:

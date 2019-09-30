@@ -2,7 +2,7 @@ import React from "react";
 import Results from "./Results";
 import Search from "./Search";
 import Header from "./Header";
-import sampleData from './sampleData.json';
+import db from './db.json';
 
 class App extends React.Component {
   constructor() {
@@ -60,10 +60,15 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(sampleData)
-    console.log(sampleData.data[0].name, sampleData.data[0].abv);
-    console.log(sampleData.data[1].name, sampleData.data[1].abv);
-    console.log(sampleData.data[9].name, sampleData.data[9].abv);
+    let i;
+    console.log(db.data.length-1);
+    for (i = 0; i < db.data.length; i++) {
+      if (db.data[i].abv) {
+        console.log(i, db.data[i].abv);
+        // console.log(db.data[i].ibu);
+      }
+    }
+
 
     return (
       <div className="wrapper">

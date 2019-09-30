@@ -43,6 +43,11 @@ class Single extends React.Component {
     return <div className="abv">ABV: {beer.abv}%</div>;
   };
 
+  renderIbu = beer => {
+    if (!beer.ibu) return;
+    return <div className="ibu">IBU: {beer.ibu}</div>;
+  };
+
   render() {
     if (this.state.loading) {
       return <Loader message="Beer is the answer no matter what the question is!" />;
@@ -53,7 +58,7 @@ class Single extends React.Component {
 
     return (
       <div>
-        <Header siteName="Beer me!" />
+        <Header siteName="BREWVANA" />
         <div className="single-beer">
           <div className="desc">
             <h2>{beer.name}</h2>
@@ -65,6 +70,7 @@ class Single extends React.Component {
           <div className="deets">
             {this.renderGlass(beer)}
             {this.renderAbv(beer)}
+            {this.renderIbu(beer)}
           </div>
 
           <div className="style">

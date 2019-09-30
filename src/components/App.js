@@ -60,7 +60,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="wrapper">
-        <Header siteName="Beer me!" />
+        <Header siteName="BREWVANA" />
         <Search />
         <Results beers={this.state.beers} loading={this.state.loading} />
       </div>

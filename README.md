@@ -26,6 +26,11 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Information about Punk API
+1) the last id of beer is 325
+2) a rate limit of 3600 requests per hour
+
 ## Available Scripts
 
 In the project directory, you can run:

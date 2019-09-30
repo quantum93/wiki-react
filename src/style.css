@@ -13,7 +13,8 @@ body {
   background: #f0e5c7;
   padding: 1rem;
   border-top: 1.5rem solid #e13e45; /* This is color line for each beer card */
-  flex: 1 0 auto;
+  flex: initial;
+  /* flex: 1 0 auto; */
   margin: 2rem;
   overflow: hidden;
   width: calc(33.3% - 4rem);

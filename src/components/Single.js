@@ -49,6 +49,11 @@ class Single extends React.Component {
     return <div className="ibu">IBU: {beer.ibu}</div>;
   };
 
+  renderCategory = beer => {
+    if (!beer.style.category) return;
+    return <div className="category">Category: {beer.style.category.name}</div>;
+  };
+
   renderFood = beer => {
     if (!beer.foodPairings) return;
     return <div className="foodPairings">Food Pairings: {beer.foodPairings}</div>;
@@ -56,12 +61,12 @@ class Single extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <Loader message="Beer is the answer no matter what the question is!" />;
+      return <Loader message="Beer is the answer!" />;
     }
 
     const { beer } = this.state;
     console.log(beer);
-    console.log(beer.style.categoryId);
+    console.log(beer.style.category.name);
 
     return (
       <div>
@@ -79,6 +84,7 @@ class Single extends React.Component {
             {this.renderAbv(beer)}
             {this.renderIbu(beer)}
             {this.renderFood(beer)}
+            {this.renderCategory(beer)}
           </div>
 
           <div className="style">

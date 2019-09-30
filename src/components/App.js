@@ -2,7 +2,6 @@ import React from "react";
 import Results from "./Results";
 import Search from "./Search";
 import Header from "./Header";
-import db from './db.json';
 
 class App extends React.Component {
   constructor() {
@@ -60,15 +59,6 @@ class App extends React.Component {
   };
 
   render() {
-    let i;
-    console.log(db.data.length-1);
-    for (i = 0; i < db.data.length; i++) {
-      if (db.data[i].abv) {
-        console.log(i, db.data[i].abv);
-        // console.log(db.data[i].ibu);
-      }
-    }
-
 
     return (
       <div className="wrapper">

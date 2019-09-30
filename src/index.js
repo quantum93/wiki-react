@@ -2,6 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
 import Single from './components/Single';
+import Navbar from './components/Navbar';
+import Chart from './components/Chart';
+import Crawler from './components/Crawler';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -12,7 +15,10 @@ const Root = function() {
   return (
     <BrowserRouter>
       <div>
+        <Navbar />
         <Route exact path="/" component={App} />
+        <Route exact path="/chart" component={Chart} />
+        <Route exact path="/crawler" component={Crawler} />
         <Route path="/search/:searchTerm" component={App} />
         <Route path="/beer/:beerId/:beerSlug" component={Single} />
       </div>

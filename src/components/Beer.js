@@ -11,6 +11,7 @@ class Beer extends React.Component {
   render() {
     const { name, labels, id } = this.props.details;
     const image = labels ? labels.medium : 'null.jpg';
+    console.log(this.props.details.isOrganic)
 
     return (
       <div className="beer">

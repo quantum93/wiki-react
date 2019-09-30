@@ -25,6 +25,7 @@ class Single extends React.Component {
       .then(data => data.json())
       .then(res => {
         this.setState({ beer: res.data, loading: false });
+        console.log(beerId)
       });
   };
 
@@ -48,6 +49,11 @@ class Single extends React.Component {
     return <div className="ibu">IBU: {beer.ibu}</div>;
   };
 
+  renderFood = beer => {
+    if (!beer.foodPairings) return;
+    return <div className="foodPairings">Food Pairings: {beer.foodPairings}</div>;
+  };
+
   render() {
     if (this.state.loading) {
       return <Loader message="Beer is the answer no matter what the question is!" />;
@@ -55,6 +61,7 @@ class Single extends React.Component {
 
     const { beer } = this.state;
     console.log(beer);
+    console.log(beer.style.categoryId);
 
     return (
       <div>
@@ -71,6 +78,7 @@ class Single extends React.Component {
             {this.renderGlass(beer)}
             {this.renderAbv(beer)}
             {this.renderIbu(beer)}
+            {this.renderFood(beer)}
           </div>
 
           <div className="style">

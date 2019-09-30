@@ -29,11 +29,12 @@ class App extends React.Component {
     }
   }
 
-  loadBeers = (searchTerm = "hops") => {
+  loadBeers = (searchTerm = "pale") => {
     this.setState({ loading: true });
 
     // Check for beers in local storage
     const localStorageBeers = localStorage.getItem(`search-${searchTerm}`);
+    // console.log(localStorageBeers)
 
     if (localStorageBeers) {
       const localBeers = JSON.parse(localStorageBeers);
@@ -61,7 +62,7 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <Header siteName="BREWVANA" />
-        <Search />
+        <Search handleSubmit={this.loadBeers}/>
         <Results beers={this.state.beers} loading={this.state.loading} />
       </div>
     );

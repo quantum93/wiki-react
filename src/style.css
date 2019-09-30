@@ -12,7 +12,7 @@ body {
 .beer {
   background: #fff;
   padding: 1rem;
-  border-top: 1.5rem solid #e13e45;
+  border-top: 1.5rem solid #e13e45; /* This is color line for each beer card */
   flex: 1 0 auto;
   margin: 2rem;
   overflow: hidden;

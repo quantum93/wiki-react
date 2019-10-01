@@ -9,6 +9,39 @@ body {
   background-attachment: fixed;
 }
 
+p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #0d181c;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Bevan', cursive;
+  font-weight: normal;
+  transform: rotate(-5deg) skew(-20deg);
+  margin: 2rem 0 2rem 0;
+}
+
+h1 a {
+  text-decoration: none;
+  font-size: 10rem;
+  text-shadow: 3px 3px 0 rgba(13,24,28,0.2);
+}
+
 .beer {
   background: #f0e5c7;
   padding: 1rem;
@@ -76,4 +109,34 @@ padding: 2rem;
   text-align: center;
   font-size: 3rem;
   font-weight: 100;
+}
+
+/* Search */
+.search {
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.search form {
+  display: flex;
+}
+
+.search form > * {
+  flex: 1;
+  background: #fff;
+  border: 0;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.search form > *[type="submit"] {
+  flex-grow: 2;
+  background: #e13e45;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.search form > *[type="text"] {
+  flex-grow: 10;
 }

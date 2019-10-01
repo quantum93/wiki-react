@@ -36,6 +36,9 @@ for page 1, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea85
 for page 2, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8&p=2
 ...
 
+## About chart.js
+
+https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
 
 ## Available Scripts
 

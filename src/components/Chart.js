@@ -40,16 +40,23 @@ const dougnutState = {
   ]
 }
 
-// const scatterState = {
-//   datasets: [{
-//       label: 'ABV vs. IBU',
-//       backgroundColor: ['#B21F00'],
-//       data: [{ x: 4, y: 4 }, { x: 0, y: 10 }, {  x: 10, y: 5 }]
-//     }]
-// }
 
 const myChart = () => {
-  console.log(db.data[0].abv);
+
+  // let ABVs = db.data.map(function(e) {
+  //   if(e.abv) {return console.log(e.id, e.abv);}
+  // });
+  // console.log("IBUs");
+  // let IBUs = db.data.map(function(e) {
+  //   if(e.ibu) {return console.log(e.id, e.ibu);}
+  // });
+  let beerData=[];
+  let data=db.data.map(function(e) {
+    if(e.abv && e.ibu) {
+      beerData.push({['x']: parseFloat(e.abv), ['y']: parseFloat(e.ibu)})
+    }
+  });
+  console.log(beerData);
   return(
     <div>
         <Doughnut
@@ -68,7 +75,8 @@ const myChart = () => {
             { datasets: [{
                 label: 'ABV vs. IBU',
                 backgroundColor: ['#B21F00'],
-                data: [{ x: 4, y: 4 }, { x: 0, y: 10 }, {  x: 10, y: 5 }]
+                data: beerData
+                // data: [{ x: 4, y: 4 }, { x: 0, y: 10 }, {  x: 10, y: 5 }]
               }]
             }
           }

@@ -50,6 +50,7 @@ const myChart = () => {
   // let IBUs = db.data.map(function(e) {
   //   if(e.ibu) {return console.log(e.id, e.ibu);}
   // });
+  
   let beerData=[];
   let data=db.data.map(function(e) {
     if(e.abv && e.ibu) {
@@ -67,21 +68,21 @@ const myChart = () => {
           }}
         />
 
-        <hr/>
-        <hr/>
+
 
         <Scatter
           data={
-            { datasets: [{
+            {datasets: [{
                 label: 'ABV vs. IBU',
                 backgroundColor: ['#B21F00'],
                 data: beerData
-                // data: [{ x: 4, y: 4 }, { x: 0, y: 10 }, {  x: 10, y: 5 }]
               }]
             }
           }
           options={{scales: {xAxes: [{type: 'linear', position: 'bottom'}]}}}
         />
+
+
       </div>
   );
 }

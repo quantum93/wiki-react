@@ -2,6 +2,8 @@ import React from "react";
 import Loader from "./Loader";
 import Header from "./Header";
 import PropTypes from "prop-types";
+import db from './db.json';
+import {Bar} from 'react-chartjs-2';
 
 class Single extends React.Component {
   constructor() {
@@ -25,7 +27,7 @@ class Single extends React.Component {
       .then(data => data.json())
       .then(res => {
         this.setState({ beer: res.data, loading: false });
-        console.log(beerId)
+        // console.log(beerId)
       });
   };
 
@@ -65,8 +67,23 @@ class Single extends React.Component {
     }
 
     const { beer } = this.state;
-    console.log(beer);
-    console.log(beer.style.category.name);
+    // console.log(beer);
+    // console.log(beer.style.category.name);
+
+    // This is for chart of ABV value in bar style
+
+    const state = {
+      labels: ['ABV(%)', 'IBU'],
+      datasets: [
+        {
+          label: beer.name,
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 1,
+          data: [beer.abv, beer.ibu]
+        }
+      ]
+    }
 
     return (
       <div>
@@ -85,6 +102,18 @@ class Single extends React.Component {
             {this.renderIbu(beer)}
             {this.renderFood(beer)}
             {this.renderCategory(beer)}
+          </div>
+
+          <div>
+            <Bar
+              data={state}
+              options={
+                {
+                  title:{ display:true, text:'Your Beer\'s ABV value', fontSize:20 },
+                  legend:{ display:true, position:'right' }
+                }
+              }
+            />
           </div>
 
           <div className="style">

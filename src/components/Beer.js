@@ -8,18 +8,39 @@ class Beer extends React.Component {
     details: PropTypes.object.isRequired
   }
 
+
+
   render() {
     const { name, labels, id } = this.props.details;
     const image = labels ? labels.medium : 'null.jpg';
-    console.log(this.props.details.isOrganic)
+
+    const isOrganic = this.props.details.isOrganic;
+    // let myReturn = "";
+    //
+    // if(isOrganic == "N") {
+    //   myReturn = (  <div className="beer">
+    //     <Link to={`/beer/${id}/${slug(name)}`}>
+    //     <h2>{name}</h2>
+    //     <img src={image} alt={name} />
+    //     </Link>
+    //     </div>)
+    // } else {
+    //   myReturn = ( <div className="beer">
+    //     <Link to={`/beer/${id}/${slug(name)}`}>
+    //     <h2>{name}</h2>
+    //     <img src={image} alt={name} />
+    //     </Link>
+    //     </div>
+    //   )
+    // }
 
     return (
-      <div className="beer">
-        <Link to={`/beer/${id}/${slug(name)}`}>
+      <div className="beer"> //make className variable rather than duplicate logic
+          <Link to={`/beer/${id}/${slug(name)}`}>
           <h2>{name}</h2>
           <img src={image} alt={name} />
-        </Link>
-      </div>
+          </Link>
+          </div>
     );
   }
 }

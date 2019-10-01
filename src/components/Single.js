@@ -67,7 +67,7 @@ class Single extends React.Component {
     }
 
     const { beer } = this.state;
-    // console.log(beer);
+    console.log(beer);
     // console.log(beer.style.category.name);
 
     // This is for chart of ABV value in bar style

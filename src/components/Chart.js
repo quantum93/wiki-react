@@ -50,7 +50,7 @@ const myChart = () => {
   // let IBUs = db.data.map(function(e) {
   //   if(e.ibu) {return console.log(e.id, e.ibu);}
   // });
-  
+
   let beerData=[];
   let data=db.data.map(function(e) {
     if(e.abv && e.ibu) {
@@ -116,3 +116,11 @@ export default myChart;
   //   console.log(counter += 1);
   // }
 // }
+
+let i;
+let counter = 0;
+for(i=0; i<db.data.length; i++) {
+  if(db.data[i].isOrganic === "Y") {
+    console.log(i, db.data[i].name, counter += 1)
+  }
+}

@@ -69,8 +69,9 @@ const myChart = () => {
             legend:{ display:true, position:'right' }
           }}
           onElementsClick = {elems => {
+            console.log(elems[0])
             if (elems[0]) {
-              // window.location = "https://example.com";
+              window.location = "/category";
             } else {
               return;
             }

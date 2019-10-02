@@ -24,11 +24,11 @@ class Beer extends React.Component {
 
     return (
       <div className={myReturn}>
-          <Link to={`/beer/${id}/${slug(name)}`}>
+        <Link to={`/beer/${id}/${slug(name)}`}>
           <h2>{name}</h2>
           <img src={image} alt={name} />
-          </Link>
-          </div>
+        </Link>
+      </div>
     );
   }
 }

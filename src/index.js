@@ -5,6 +5,7 @@ import Single from './components/Single';
 import Navbar from './components/Navbar';
 import Chart from './components/Chart';
 import Crawler from './components/Crawler';
+import Category from './components/Category';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ const Root = function() {
         <Route exact path="/crawler" component={Crawler} />
         <Route path="/search/:searchTerm" component={App} />
         <Route path="/beer/:beerId" component={Single} />
+        <Route path="/category" component={Category} />
       </div>
     </BrowserRouter>
   );

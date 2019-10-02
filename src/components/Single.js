@@ -67,7 +67,7 @@ class Single extends React.Component {
     }
 
     const { beer } = this.state;
-    console.log(beer);
+    // console.log(beer);
     // console.log(beer.style.category.name);
 
     // This is for chart of ABV value in bar style
@@ -85,6 +85,15 @@ class Single extends React.Component {
       ]
     }
 
+    // This is logic for the case for the beer data without large image.
+    let image;
+    if (beer.labels) {
+      image = beer.labels.large
+    } else {
+      image = "./generic.jpg"
+    }
+    console.log(typeof image)
+
     return (
       <div>
         <Header siteName="BREWVANA" />
@@ -94,7 +103,7 @@ class Single extends React.Component {
             <p>{beer.description}</p>
           </div>
 
-          <img className="label" src={beer.labels.large} alt={beer.name} />
+          <img className="label" src={`${image}`} alt={beer.name} />
 
           <div className="deets">
             {this.renderGlass(beer)}

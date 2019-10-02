@@ -82,13 +82,19 @@ const myChart = () => {
             scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
             title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
           }}
-          onElementsClick = {elems => {
-            let clickId = beerId[elems[0]._index]
-            console.log(clickId);
-            // window.location = '/beer/69tWZj';
-            window.location = `/beer/${clickId}`;
-          }}
+          onElementsClick = {
+            elems => {
+              if(elems[0]) {
+                let clickId = beerId[elems[0]._index]
+                // window.location = '/beer/69tWZj';
+                window.location = `/beer/${clickId}`;
+              } else {
+                return;
+              }
+            }
+          }
         />
+        
         <div>
           <h2>More than half of beers in API doesn't have IBU data.</h2>
         </div>

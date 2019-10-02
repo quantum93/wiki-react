@@ -3,6 +3,7 @@ import Loader from "./Loader";
 import Header from "./Header";
 import PropTypes from "prop-types";
 import {Bar} from 'react-chartjs-2';
+import Generic from './generic.jpg';
 
 class Single extends React.Component {
   constructor() {
@@ -65,7 +66,7 @@ class Single extends React.Component {
     if (beer.labels) {
       return <img className="label" src={beer.labels.large} alt={beer.name} />
     } else {
-      return <img className="label" src='./generic.jpg' alt={beer.name} />
+      return <img src={Generic} alt={beer.name} />
     }
   };
 
@@ -98,7 +99,7 @@ class Single extends React.Component {
       <div>
         <Header siteName="BREWVANA" />
         <div className="single-beer">
-        
+
           <div className="desc">
             <h2>{beer.name}</h2>
             <p>{beer.description}</p>

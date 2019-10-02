@@ -1,7 +1,10 @@
 import React from 'react';
 import db from './db.json';
 import {Scatter, Doughnut} from 'react-chartjs-2';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Single from './Single';
 
+// const for Doughnut plot
 const dougnutState = {
   labels: ['Hybrid/mixed Beer',
            'European-germanic Lager',
@@ -39,50 +42,56 @@ const dougnutState = {
     }
   ]
 }
-
+// console.log(dougnutState);
 
 const myChart = () => {
-
-  // let ABVs = db.data.map(function(e) {
-  //   if(e.abv) {return console.log(e.id, e.abv);}
-  // });
-  // console.log("IBUs");
-  // let IBUs = db.data.map(function(e) {
-  //   if(e.ibu) {return console.log(e.id, e.ibu);}
-  // });
-
+  //const for scatter plot
   let beerData=[];
+  let beerId=[];
   let data=db.data.map(function(e) {
     if(e.abv && e.ibu) {
       beerData.push({['x']: parseFloat(e.abv), ['y']: parseFloat(e.ibu)})
+      beerId.push(e.id)
     }
   });
-  console.log(beerData);
+  // console.log(beerData);
+
   return(
     <div>
         <Doughnut
           data={dougnutState}
           options={{
-            title:{ display:true, text:'Beer in different category', fontSize:20 },
+            title:{ display:true, text:'Beer in different category from 1107 beers', fontSize:20 },
             legend:{ display:true, position:'right' }
           }}
+          onElementsClick = {elems => {
+            console.log(elems[0]);
+            window.location = "https://example.com";
+          }}
         />
-
+        <div>
+          <h2>The 56% of beers in API comes from North American Origin.</h2>
+        </div>
 
 
         <Scatter
           data={
-            {datasets: [{
-                label: 'ABV vs. IBU',
-                backgroundColor: ['#B21F00'],
-                data: beerData
-              }]
-            }
+            { datasets: [{ label: 'ABV(%) vs. IBU', data: beerData }] }
           }
-          options={{scales: {xAxes: [{type: 'linear', position: 'bottom'}]}}}
+          options={{
+            scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
+            title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
+          }}
+          onElementsClick = {elems => {
+            let clickId = beerId[elems[0]._index]
+            console.log(clickId);
+            // window.location = '/beer/69tWZj';
+            window.location = `/beer/${clickId}`;
+          }}
         />
-
-
+        <div>
+          <h2>More than half of beers in API doesn't have IBU data.</h2>
+        </div>
       </div>
   );
 }
@@ -117,10 +126,10 @@ export default myChart;
   // }
 // }
 
-let i;
-let counter = 0;
-for(i=0; i<db.data.length; i++) {
-  if(db.data[i].isOrganic === "Y") {
-    console.log(i, db.data[i].name, counter += 1)
-  }
-}
+// let i;
+// let counter = 0;
+// for(i=0; i<db.data.length; i++) {
+//   if(db.data[i].isOrganic === "Y") {
+//     console.log(i, db.data[i].name, counter += 1)
+//   }
+// }

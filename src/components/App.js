@@ -49,16 +49,12 @@ class App extends React.Component {
         const filteredBeers = beers.filter(beer => beer.labels);
         this.setState({ beers: filteredBeers, loading: false });
         // save to local storage in case we search for this again
-        localStorage.setItem(
-          `search-${searchTerm}`,
-          JSON.stringify(this.state.beers)
-        );
+        localStorage.setItem( `search-${searchTerm}`, JSON.stringify(this.state.beers) );
       })
       .catch(err => console.error(err));
   };
 
   render() {
-
     return (
         <div className="wrapper">
           <Header siteName="BREWVANA" />

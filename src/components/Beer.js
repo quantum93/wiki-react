@@ -8,8 +8,6 @@ class Beer extends React.Component {
     details: PropTypes.object.isRequired
   }
 
-
-
   render() {
     const { name, labels, id } = this.props.details;
     const image = labels ? labels.medium : 'null.jpg';
@@ -22,7 +20,7 @@ class Beer extends React.Component {
     } else if (isOrganic === "Y") {
       myReturn = "beer-organic"
     }
-    console.log(myReturn);
+    // console.log(myReturn);
 
     return (
       <div className={myReturn}>

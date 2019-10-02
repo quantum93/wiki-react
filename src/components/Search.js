@@ -15,7 +15,7 @@ class Search extends React.Component {
     return (
       <div className="search">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" ref={this.searchRef} placeholder="Hoppy, Malt, Angry, New..." />
+          <input type="text" ref={this.searchRef} placeholder="Ale, Hoppy, Lager, New..." />
           <input type="submit" value="Search" />
         </form>
       </div>

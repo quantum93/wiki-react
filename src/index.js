@@ -20,7 +20,7 @@ const Root = function() {
         <Route exact path="/chart" component={Chart} />
         <Route exact path="/crawler" component={Crawler} />
         <Route path="/search/:searchTerm" component={App} />
-        <Route path="/beer/:beerId/:beerSlug" component={Single} />
+        <Route path="/beer/:beerId" component={Single} />
       </div>
     </BrowserRouter>
   );

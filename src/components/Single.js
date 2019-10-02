@@ -2,7 +2,6 @@ import React from "react";
 import Loader from "./Loader";
 import Header from "./Header";
 import PropTypes from "prop-types";
-import db from './db.json';
 import {Bar} from 'react-chartjs-2';
 
 class Single extends React.Component {
@@ -61,6 +60,16 @@ class Single extends React.Component {
     return <div className="foodPairings">Food Pairings: {beer.foodPairings}</div>;
   };
 
+  // This is logic for the case for the beer data without large image.
+  renderImage = beer => {
+    if (beer.labels) {
+      return <img className="label" src={beer.labels.large} alt={beer.name} />
+    } else {
+      return <img className="label" src='./generic.jpg' alt={beer.name} />
+    }
+  };
+
+
   render() {
     if (this.state.loading) {
       return <Loader message="Beer is the answer!" />;
@@ -85,27 +94,18 @@ class Single extends React.Component {
       ]
     }
 
-    // This is logic for the case for the beer data without large image.
-    let image;
-    if (beer.labels) {
-      image = beer.labels.large
-    } else {
-      image = "./generic.jpg"
-    }
-    console.log(typeof image)
-
     return (
       <div>
         <Header siteName="BREWVANA" />
         <div className="single-beer">
+        
           <div className="desc">
             <h2>{beer.name}</h2>
             <p>{beer.description}</p>
           </div>
 
-          <img className="label" src={image} alt={beer.name} />
-
           <div className="deets">
+            {this.renderImage(beer)}
             {this.renderGlass(beer)}
             {this.renderAbv(beer)}
             {this.renderIbu(beer)}

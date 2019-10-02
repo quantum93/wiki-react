@@ -58,6 +58,10 @@ const myChart = () => {
 
   return(
     <div>
+      <div>
+        <h1>This is chart page.</h1>
+      </div>
+
         <Doughnut
           data={dougnutState}
           options={{
@@ -65,8 +69,11 @@ const myChart = () => {
             legend:{ display:true, position:'right' }
           }}
           onElementsClick = {elems => {
-            console.log(elems[0]);
-            window.location = "https://example.com";
+            if (elems[0]) {
+              // window.location = "https://example.com";
+            } else {
+              return;
+            }
           }}
         />
         <div>
@@ -94,7 +101,7 @@ const myChart = () => {
             }
           }
         />
-        
+
         <div>
           <h2>More than half of beers in API doesn't have IBU data.</h2>
         </div>

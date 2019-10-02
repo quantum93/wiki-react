@@ -29,9 +29,8 @@ class App extends React.Component {
     }
   }
 
-  loadBeers = (searchTerm = "Extra Ale") => {
+  loadBeers = (searchTerm = "Ale") => {
     this.setState({ loading: true });
-
     // Check for beers in local storage
     const localStorageBeers = localStorage.getItem(`search-${searchTerm}`);
     // console.log(localStorageBeers)

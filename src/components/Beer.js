@@ -15,27 +15,17 @@ class Beer extends React.Component {
     const image = labels ? labels.medium : 'null.jpg';
 
     const isOrganic = this.props.details.isOrganic;
-    // let myReturn = "";
-    //
-    // if(isOrganic == "N") {
-    //   myReturn = (  <div className="beer">
-    //     <Link to={`/beer/${id}/${slug(name)}`}>
-    //     <h2>{name}</h2>
-    //     <img src={image} alt={name} />
-    //     </Link>
-    //     </div>)
-    // } else {
-    //   myReturn = ( <div className="beer">
-    //     <Link to={`/beer/${id}/${slug(name)}`}>
-    //     <h2>{name}</h2>
-    //     <img src={image} alt={name} />
-    //     </Link>
-    //     </div>
-    //   )
-    // }
+    let myReturn = "";
+
+    if (isOrganic === "N") {
+      myReturn = "beer";
+    } else if (isOrganic === "Y") {
+      myReturn = "beer-organic"
+    }
+    console.log(myReturn);
 
     return (
-      <div className="beer"> //make className variable rather than duplicate logic
+      <div className={myReturn}>
           <Link to={`/beer/${id}/${slug(name)}`}>
           <h2>{name}</h2>
           <img src={image} alt={name} />
@@ -44,5 +34,4 @@ class Beer extends React.Component {
     );
   }
 }
-
 export default Beer;

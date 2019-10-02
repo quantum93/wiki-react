@@ -103,7 +103,7 @@ class Single extends React.Component {
             <p>{beer.description}</p>
           </div>
 
-          <img className="label" src={`${image}`} alt={beer.name} />
+          <img className="label" src={image} alt={beer.name} />
 
           <div className="deets">
             {this.renderGlass(beer)}

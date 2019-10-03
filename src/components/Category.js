@@ -23,7 +23,7 @@ const Category = () => {
     let beerId=[];
 
     let data=db.data.map(function(e) {
-      if(e.style && e.style.category.name === labels[2]) {
+      if(e.style && e.style.category.name === labels[3]) {
           beerName.push(e.name)
           beerId.push(e.id)
       }
@@ -33,7 +33,7 @@ const Category = () => {
     return(
       <div>
         {beerName.map((value, index) =>{
-          return <li key={index}>{value}</li>
+          return <h2 key={index}>{value}</h2>
         })}
       </div>
     );

@@ -22,7 +22,7 @@ const Root = function() {
         <Route exact path="/crawler" component={Crawler} />
         <Route path="/search/:searchTerm" component={App} />
         <Route path="/beer/:beerId" component={Single} />
-        <Route path="/category" component={Category} />
+        <Route path="/category/:categoryId" component={Category} />
       </div>
     </BrowserRouter>
   );

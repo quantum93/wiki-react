@@ -42,7 +42,7 @@ const dougnutState = {
     }
   ]
 }
-// console.log(dougnutState);
+// console.log(dougnutState.labels[3]);
 
 const myChart = () => {
   //const for scatter plot
@@ -71,8 +71,10 @@ const myChart = () => {
           onElementsClick = {elems => {
             console.log(elems[0])
             if (elems[0]) {
-              let clickId = beerId[elems[0]._index]
-              window.location = "/category";
+              console.log(elems[0]._index);
+              let categoryId = dougnutState.labels[elems[0]._index]
+              console.log(categoryId);
+              window.location = `/category/${categoryId}`;
             } else {
               return;
             }

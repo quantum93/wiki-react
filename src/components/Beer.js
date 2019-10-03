@@ -12,7 +12,7 @@ class Beer extends React.Component {
     const { name, labels, id } = this.props.details;
     const image = labels ? labels.medium : 'null.jpg';
 
-    console.log(this.props.details);
+    // console.log(this.props.details);
     const isOrganic = this.props.details.isOrganic;
 
     let myReturn = "";

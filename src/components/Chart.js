@@ -16,66 +16,77 @@ const dougnutState = {
 }
 // console.log(dougnutState.labels[3]);
 
-const myChart = () => {
-  //const for scatter plot
-  let beerData=[];
-  let beerId=[];
-  let data=db.data.map(function(e) {
-    if(e.abv && e.ibu) {
-      beerData.push({['x']: parseFloat(e.abv), ['y']: parseFloat(e.ibu)})
-      beerId.push(e.id)
-    }
-  });
+class myChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { categoryNu: null };
+  }
 
-  return(
-    <div>
+  render() {
+    //const for scatter plot
+    let beerData=[];
+    let beerId=[];
+    let data=db.data.map(function(e) {
+      if(e.abv && e.ibu) {
+        beerData.push({['x']: parseFloat(e.abv), ['y']: parseFloat(e.ibu)})
+        beerId.push(e.id)
+      }
+    });
+
+    return(
       <div>
-        <h1>This is chart page.</h1>
-      </div>
-
-        <Doughnut
-          data={dougnutState}
-          options={{
-            title:{ display:true, text:'Beer in different category from 1107 beers', fontSize:20 },
-            legend:{ display:true, position:'right' }
-          }}
-          onElementsClick = {elems => {
-            if (elems[0]) {
-              let categoryId = dougnutState.labels[elems[0]._index]
-              window.location = `/category/${categoryId}`;
-            } else {
-              return;
-            }
-          }}
-        />
         <div>
-          <h2>The 56% of beers in API comes from North American Origin.</h2>
+          <h1>This is chart page.</h1>
         </div>
 
-        <Scatter
-          data={
-            { datasets: [{ label: 'ABV(%) vs. IBU', data: beerData }] }
-          }
-          options={{
-            scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
-            title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
-          }}
-          onElementsClick = { elems => {
-              if(elems[0]) {
-                let clickId = beerId[elems[0]._index]
-                window.location = `/beer/${clickId}`;
+          <Doughnut
+            data={dougnutState}
+            options={{
+              title:{ display:true, text:'Beer in different category from 1107 beers', fontSize:20 },
+              legend:{ display:true, position:'right' }
+            }}
+            onElementsClick = {elems => {
+              if (elems[0]) {
+                this.state.categoryNu = elems[0]._index;
+                console.log(this.state.categoryNu);
+                let categoryId = dougnutState.labels[elems[0]._index]
+                window.location = `/category/${categoryId}`;
               } else {
                 return;
               }
-            }
-          }
-        />
+            }}
+          />
+          <div>
+            <h2>The 56% of beers in API comes from North American Origin.</h2>
+          </div>
 
-        <div>
-          <h2>More than half of beers in API doesn't have IBU data.</h2>
+          <Scatter
+            data={
+              { datasets: [{ label: 'ABV(%) vs. IBU', data: beerData }] }
+            }
+            options={{
+              scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
+              title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
+            }}
+            onElementsClick = { elems => {
+                if(elems[0]) {
+                  let clickId = beerId[elems[0]._index]
+                  window.location = `/beer/${clickId}`;
+                } else {
+                  return;
+                }
+              }
+            }
+          />
+
+          <div>
+            <h2>More than half of beers in API doesn't have IBU data.</h2>
+          </div>
         </div>
-      </div>
-  );
+    );
+  }
 }
+
+
 
 export default myChart;

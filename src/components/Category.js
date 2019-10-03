@@ -1,38 +1,42 @@
 import React from 'react';
 import db from './db.json';
+import Loader from './Loader';
+import Beer from './Beer';
 
 const Category = () => {
-  let beerList=[];
-  let data=db.data.map(function(e) {
-    console.log(e.style)
-    if(e.name) {
-      beerList.push(e.name)
-    }
-  });
+    const labels = ['Hybrid/mixed Beer',
+    'European-germanic Lager',
+    'North American Lager',
+    'North American Origin Ales',
+    'British Origin Ales',
+    'Belgian And French Origin Ales',
+    'Irish Origin Ales',
+    'German Origin Ales',
+    'International Styles',
+    'Mead, Cider, & Perry',
+    'Malternative Beverages',
+    'Other Lager',
+    'No style information'
+  ];
 
-  return(
-    <div>
-      <h2>This is test</h2>
-      <h2>{beerList}</h2>
-    </div>
-  )
+    let beerName=[];
+    let beerId=[];
+
+    let data=db.data.map(function(e) {
+      if(e.style && e.style.category.name === labels[2]) {
+          beerName.push(e.name)
+          beerId.push(e.id)
+      }
+    });
+
+    console.log(beerName.length);
+    return(
+      <div>
+        {beerName.map((value, index) =>{
+          return <li key={index}>{value}</li>
+        })}
+      </div>
+    );
 }
 
 export default Category;
-
-// Test for logic
-
-// let counter = 0;
-// let category ="";
-// for (let i=0; i <db.data.length; i++) {
-//   let style = db.data[i].style
-  // if(style && style.category.name !== category) {
-  //   console.log(category = style.category.name)
-  // }
-  // if(style && style.category.name === "Malternative Beverages") {
-  //   console.log(counter += 1);
-  // }
-//   if(!style) {
-//     console.log(db.data[i].name);
-//   }
-// }

@@ -71,6 +71,7 @@ const myChart = () => {
           onElementsClick = {elems => {
             console.log(elems[0])
             if (elems[0]) {
+              let clickId = beerId[elems[0]._index]
               window.location = "/category";
             } else {
               return;
@@ -111,39 +112,3 @@ const myChart = () => {
 }
 
 export default myChart;
-
-// console.log(scatterState);
-
-// let i;
-// let counter = 0;
-// let category ="";
-// console.log(db.data.length-1);
-// for (i = 0; i < db.data.length; i++) {
-//     if (db.data[i].abv) {
-//         console.log(i, db.data[i].abv);
-//         console.log(db.data[i].ibu);
-//         let style = db.data[i].style
-//         console.log(i, style ? style.category.name : "no category name");
-//       }
-//     }
-
-// for (i=0; i <db.data.length; i++) {
-//   let style = db.data[i].style
-  // if(style && style.category.name !== category) {
-  //   console.log(category = style.category.name)
-  // }
-  // if(style && style.category.name === "Malternative Beverages") {
-  //   console.log(counter += 1);
-  // }
-  // if(!style) {
-  //   console.log(counter += 1);
-  // }
-// }
-
-// let i;
-// let counter = 0;
-// for(i=0; i<db.data.length; i++) {
-//   if(db.data[i].isOrganic === "Y") {
-//     console.log(i, db.data[i].name, counter += 1)
-//   }
-// }

@@ -40,6 +40,10 @@ for page 2, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea85
 
 https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
 
+## How to pass props to components in React
+
+https://www.robinwieruch.de/react-pass-props-to-component
+
 ## Available Scripts
 
 In the project directory, you can run:

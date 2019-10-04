@@ -2,7 +2,6 @@ import React from 'react';
 import db from './db.json';
 import {Scatter, Doughnut} from 'react-chartjs-2';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Single from './Single';
 
 // const for Doughnut plot
 const dougnutState = {

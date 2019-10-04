@@ -68,3 +68,19 @@
 //     console.log(i, db.data[i].name, counter += 1)
 //   }
 // }
+
+<Crawler exact path="/crawler" component={Crawler} />
+
+const Root = function() {
+  return (
+      <div>
+        <Route exact path="/" component={App} />
+        <Route exact path="/chart" component={Chart} />
+        <Route path="/search/:searchTerm" component={App} />
+        <Route path="/beer/:beerId" component={Single} />
+        <Route path="/category/:categoryId" component={Category} />
+      </div>
+  );
+};
+
+render(<Root/>, document.querySelector('#root'));

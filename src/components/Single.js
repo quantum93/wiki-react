@@ -97,7 +97,6 @@ class Single extends React.Component {
 
     return (
       <div>
-        <Header siteName="BREWVANA" />
         <div className="single-beer">
 
           <div className="desc">

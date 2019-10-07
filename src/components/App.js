@@ -9,6 +9,7 @@ import Chart from './Chart';
 import Single from './Single';
 import Category from './Category';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'materialize-css/dist/css/materialize.min.css';
 
 class App extends React.Component {
   render() {

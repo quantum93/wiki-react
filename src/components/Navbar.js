@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return(
-    <nav>
+    <nav class="nav-wraper indigo">
       <div>
         <ul>
           <li><Link to="/">Home</Link></li>

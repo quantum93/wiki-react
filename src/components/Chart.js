@@ -6,11 +6,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // const for Doughnut plot
 const dougnutState = {
   labels: ['Hybrid/mixed Beer','European-germanic Lager','North American Lager','North American Origin Ales','British Origin Ales','Belgian And French Origin Ales',
-           'Irish Origin Ales','German Origin Ales','International Styles','Mead, Cider, & Perry','Malternative Beverages','Other Lager','No style information'],
+  'Irish Origin Ales','German Origin Ales','International Styles','Mead, Cider, & Perry','Malternative Beverages','Other Lager','No style information'],
   datasets: [
     { label: 'Category',
-      backgroundColor: ['#B21F00','#C9DE00','#2FDE00','#00A6B4','#6800B4','#ffd077','#c3b8ff','#1a8f65','#ebc4dc','#8c9dad','#004ea8','#dd6400','#2a292a'],
-      data: [147, 45, 97, 522, 97, 102, 21, 39, 3, 3, 11, 4, 15] }
+    backgroundColor: ['#B21F00','#C9DE00','#2FDE00','#00A6B4','#6800B4','#ffd077','#c3b8ff','#1a8f65','#ebc4dc','#8c9dad','#004ea8','#dd6400','#2a292a'],
+    data: [147, 45, 97, 522, 97, 102, 21, 39, 3, 3, 11, 4, 15] }
   ]
 }
 // console.log(dougnutState.labels[3]);
@@ -34,56 +34,52 @@ class myChart extends React.Component {
 
     return(
       <div>
-        <div>
-          <h1>This is chart page.</h1>
-        </div>
+      <Doughnut
+      data={dougnutState}
+      options={{
+        title:{ display:true, text:'Beer in different category from 1107 beers', fontSize:20 },
+        legend:{ display:true, position:'right' }
+      }}
+      onElementsClick = {elems => {
+        if (elems[0]) {
+          this.state.categoryNu = elems[0]._index;
+          console.log(this.state.categoryNu);
+          let categoryId = dougnutState.labels[elems[0]._index]
+          window.location = `/category/${categoryId}`;
+        } else {
+          return;
+        }
+      }}
+      />
+      <div>
+      <h2>The 56% of beers in API comes from North American Origin.</h2>
+      </div>
 
-          <Doughnut
-            data={dougnutState}
-            options={{
-              title:{ display:true, text:'Beer in different category from 1107 beers', fontSize:20 },
-              legend:{ display:true, position:'right' }
-            }}
-            onElementsClick = {elems => {
-              if (elems[0]) {
-                this.state.categoryNu = elems[0]._index;
-                console.log(this.state.categoryNu);
-                let categoryId = dougnutState.labels[elems[0]._index]
-                window.location = `/category/${categoryId}`;
-              } else {
-                return;
-              }
-            }}
-          />
-          <div>
-            <h2>The 56% of beers in API comes from North American Origin.</h2>
-          </div>
+      <Scatter
+      data={
+        { datasets: [{ label: 'ABV(%) vs. IBU', data: beerData }] }
+      }
+      options={{
+        scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
+        title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
+      }}
+      onElementsClick = { elems => {
+        if(elems[0]) {
+          let clickId = beerId[elems[0]._index]
+          window.location = `/beer/${clickId}`;
+        } else {
+          return;
+        }
+      }
+    }
+    />
 
-          <Scatter
-            data={
-              { datasets: [{ label: 'ABV(%) vs. IBU', data: beerData }] }
-            }
-            options={{
-              scales: {xAxes: [{type: 'linear', position: 'bottom'}]},
-              title:{ display:true, text:'ABV(%) vs. IBU from 463 beers', fontSize:20}
-            }}
-            onElementsClick = { elems => {
-                if(elems[0]) {
-                  let clickId = beerId[elems[0]._index]
-                  window.location = `/beer/${clickId}`;
-                } else {
-                  return;
-                }
-              }
-            }
-          />
-
-          <div>
-            <h2>More than half of beers in API doesn't have IBU data.</h2>
-          </div>
-        </div>
-    );
-  }
+    <div>
+    <h2>More than half of beers in API doesn't have IBU data.</h2>
+    </div>
+    </div>
+  );
+}
 }
 
 

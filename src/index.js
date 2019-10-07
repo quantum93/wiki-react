@@ -14,10 +14,16 @@ import './style.css';
 
 const Root = function() {
   return (
-    <div>
-      <App />
+    <div class="container">
+      <div>
+        <App />
+      </div>
     </div>
   );
 };
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 render(<Root/>, document.querySelector('#root'));

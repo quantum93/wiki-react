@@ -18,6 +18,9 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 
 8) Interface with WebCrawler for each beer using python (https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f)
 
+9) https://stackoverflow.com/questions/32615926/use-javascript-to-get-a-random-image-from-google-images for image search from google
+
+10) http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-javascript-and-node-js/ 
 ## Component and Route Structure
 
 ![](component.png)
@@ -26,6 +29,9 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## About Crawler setup process
+
+a)
 
 ## About API
 Full list in BreweryDB

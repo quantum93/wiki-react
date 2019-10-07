@@ -14,7 +14,7 @@ import './style.css';
 
 const Root = function() {
   return (
-    <div class="container">
+    <div className="container">
       <div>
         <App />
       </div>

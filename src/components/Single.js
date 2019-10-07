@@ -1,6 +1,5 @@
 import React from "react";
 import Loader from "./Loader";
-import Header from "./Header";
 import PropTypes from "prop-types";
 import {Bar} from 'react-chartjs-2';
 import Generic from './generic.jpg';

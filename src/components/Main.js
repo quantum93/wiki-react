@@ -1,9 +1,6 @@
 import React from "react";
 import Results from "./Results";
 import Search from "./Search";
-import Header from "./Header";
-import Crawler from "./Crawler";
-import Navbar from './Navbar';
 
 class Main extends React.Component {
   constructor() {

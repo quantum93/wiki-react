@@ -1,7 +1,5 @@
 import React from 'react';
 import db from './db.json';
-import Loader from './Loader';
-import Beer from './Beer';
 import PropTypes from "prop-types";
 
 const Category = (props) => {

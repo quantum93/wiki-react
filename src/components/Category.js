@@ -23,7 +23,7 @@ const Category = (props) => {
   return(
     <div>
     {beerName.map((value, index) =>{
-      return <h2 key={index}>{value}</h2>
+      return <h5 key={index}>{value}</h5>
     })}
     </div>
   );

@@ -18,11 +18,12 @@ const dougnutState = {
 class myChart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { categoryNu: null };
   }
 
   render() {
-    //const for scatter plot
+    // if (this.props.categoryNu) {
+    //   window.location = `/category/${dougnutState.labels[this.props.categoryNu]}`;
+    // }
     let beerData=[];
     let beerId=[];
     let data=db.data.map(function(e) {
@@ -42,10 +43,11 @@ class myChart extends React.Component {
       }}
       onElementsClick = {elems => {
         if (elems[0]) {
-          this.state.categoryNu = elems[0]._index;
-          console.log(this.state.categoryNu);
+          {this.props.myCallback(elems[0]._index)}
+          // this.props.categoryNu = elems[0]._index;
+          console.log(this.props);
           let categoryId = dougnutState.labels[elems[0]._index]
-          window.location = `/category/${categoryId}`;
+          // window.location = `/category/${categoryId}`;
         } else {
           return;
         }

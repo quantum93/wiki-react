@@ -1,7 +1,6 @@
 import React from 'react';
 import db from './db.json';
 import {Scatter, Doughnut} from 'react-chartjs-2';
-import { BrowserRouter, Route } from 'react-router-dom';
 
 // const for Doughnut plot
 const dougnutState = {
@@ -16,10 +15,6 @@ const dougnutState = {
 // console.log(dougnutState.labels[3]);
 
 class myChart extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     // if (this.props.categoryNu) {
     //   window.location = `/category/${dougnutState.labels[this.props.categoryNu]}`;
@@ -46,7 +41,7 @@ class myChart extends React.Component {
           {this.props.myCallback(elems[0]._index)}
           // this.props.categoryNu = elems[0]._index;
           console.log(this.props);
-          let categoryId = dougnutState.labels[elems[0]._index]
+          // let categoryId = dougnutState.labels[elems[0]._index]
           // window.location = `/category/${categoryId}`;
         } else {
           return;

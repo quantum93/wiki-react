@@ -1,6 +1,4 @@
 import React from "react";
-import Results from "./Results";
-import Search from "./Search";
 import Header from "./Header";
 import Crawler from "./Crawler";
 import Navbar from './Navbar';
@@ -10,6 +8,7 @@ import Single from './Single';
 import Category from './Category';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
+import Page404 from './Page404';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,7 +41,7 @@ class App extends React.Component {
           <Header siteName="BREWVANA" />
           <Switch>
             <Route exact path="/" component={Main} />
-            {/* <Route exact path="/Crawler" component={Crawler} /> */}
+            <Route exact path="/Crawler" component={Crawler} />
 
             <Route exact path="/Chart"
               render={() =>
@@ -55,6 +54,7 @@ class App extends React.Component {
               render={() => {
                 console.log("in category route render", this.state.categoryNu);
                 return <Category categoryNu={this.state.categoryNu} />}} />
+            <Route component={Page404} />
           </Switch>
         </BrowserRouter>
       );

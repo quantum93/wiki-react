@@ -7,7 +7,7 @@ class Search extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const searchTerm = this.searchRef.current.value;
-    console.log(this.props, searchTerm, this.searchRef);
+    // console.log(this.props, searchTerm, this.searchRef);
     this.props.handleSubmit(searchTerm);
   }
 

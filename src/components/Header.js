@@ -9,11 +9,9 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div class="container">
         <h1>
           <Link to="/">{this.props.siteName}</Link>
         </h1>
-      </div>
     );
   }
 };

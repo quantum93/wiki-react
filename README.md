@@ -20,7 +20,7 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 
 9) https://stackoverflow.com/questions/32615926/use-javascript-to-get-a-random-image-from-google-images for image search from google
 
-10) http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-javascript-and-node-js/ 
+10) http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-javascript-and-node-js/
 ## Component and Route Structure
 
 ![](component.png)
@@ -31,7 +31,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## About Crawler setup process
 
-a)
+a) npm install request
+b) https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US (for CORS error fix in local machine only)
+c) npm install jquery --save
+d) 
 
 ## About API
 Full list in BreweryDB

@@ -12,13 +12,16 @@ const Category = (props) => {
   let beerId=[];
 
   let data=db.data.map(function(e) {
-    if(e.style && e.style.category.name === labels[parseInt(props.categoryNu)]) {
+    if(e.style && e.style.category.name === labels[props.categoryNu]) {
+      beerName.push(e.name)
+      beerId.push(e.id)
+    } else if (e.style === undefined) {
       beerName.push(e.name)
       beerId.push(e.id)
     }
   });
 
-  // console.log(beerName.length);
+  console.log(beerName.length);
   console.log(props);
   return(
     <div>

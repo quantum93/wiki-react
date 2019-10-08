@@ -18,17 +18,18 @@ class App extends React.Component {
   }
 
   myCallback = (catNo) => {
-    // console.log('catNo', catNo);
+    console.log('catNo', catNo);
     this.setState( {categoryNu: catNo} )
-    // console.log('after setState', this.state);
+    console.log('after setState', this.state);
   }
   render() {
     // window.location enforces re-initialization after this.setState. So,
     // it redirect separately after onElementsClick!
     if (this.state.categoryNu !== null) {
-      return <Category categoryNu={this.state.categoryNu} />
-    } else {
-      // console.log('on render', this.state);
+      console.log(this.state.categoryNu);
+       return <Category categoryNu={this.state.categoryNu} />
+     }
+      console.log('on render', this.state.categoryNu);
       return (
         <BrowserRouter>
           <Navbar />
@@ -38,21 +39,20 @@ class App extends React.Component {
             <Route exact path="/Youtube" component={Youtube} />
 
             <Route exact path="/Chart"
-              render={() =>
-                <Chart myCallback={this.myCallback} categoryNu={this.state.categoryNu} />} />
+              render={() => <Chart myCallback={this.myCallback} categoryNu={this.state.categoryNu} />} />
 
             <Route path="/search/:searchTerm" component={App} />
             <Route path="/beer/:beerId" component={Single} />
 
             <Route path="/category/:categoryId"
               render={() => {
-                console.log("in category route render", this.state.categoryNu);
+                // console.log("in category route render", this.state.categoryNu);
                 return <Category categoryNu={this.state.categoryNu} />}} />
             <Route component={Page404} />
           </Switch>
         </BrowserRouter>
       );
-    }
+
   }
 }
 

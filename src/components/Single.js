@@ -51,7 +51,7 @@ class Single extends React.Component {
   };
 
   renderCategory = beer => {
-    if (!beer.style.category) return;
+    if (!beer.style) return;
     return <div className="category">Category: {beer.style.category.name}</div>;
   };
 

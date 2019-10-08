@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Crawler from "./Crawler";
+import Youtube from "./Youtube";
 import Navbar from './Navbar';
 import Main from './Main';
 import Chart from './Chart';
@@ -26,13 +26,7 @@ class App extends React.Component {
     // window.location enforces re-initialization after this.setState. So,
     // it redirect separately after onElementsClick!
     if (this.state.categoryNu !== null) {
-      return (
-        <BrowserRouter>
-          <Navbar />
-          <Header siteName="BREWVANA" />
-          <Category categoryNu={this.state.categoryNu} />
-        </BrowserRouter>
-      );
+      return <Category categoryNu={this.state.categoryNu} />
     } else {
       // console.log('on render', this.state);
       return (
@@ -41,7 +35,7 @@ class App extends React.Component {
           <Header siteName="BREWVANA" />
           <Switch>
             <Route exact path="/" component={Main} />
-            <Route exact path="/Crawler" component={Crawler} />
+            <Route exact path="/Youtube" component={Youtube} />
 
             <Route exact path="/Chart"
               render={() =>

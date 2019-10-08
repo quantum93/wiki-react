@@ -15,7 +15,7 @@ class Single extends React.Component {
   };
 
   componentDidMount() {
-    // console.log(`searching for ${this.props.match.params.beerId}`);
+    console.log(`searching for ${this.props.match.params.beerId}`);
     this.loadBeer(this.props.match.params.beerId);
   }
 
@@ -26,7 +26,7 @@ class Single extends React.Component {
       .then(data => data.json())
       .then(res => {
         this.setState({ beer: res.data, loading: false });
-        // console.log(beerId)
+        this.props.myBeer(this.state.beer.name)
       });
   };
 

@@ -69,18 +69,86 @@
 //   }
 // }
 
-<Crawler exact path="/crawler" component={Crawler} />
+// <Crawler exact path="/crawler" component={Crawler} />
+//
+// const Root = function() {
+//   return (
+//       <div>
+//         <Route exact path="/" component={App} />
+//         <Route exact path="/chart" component={Chart} />
+//         <Route path="/search/:searchTerm" component={App} />
+//         <Route path="/beer/:beerId" component={Single} />
+//         <Route path="/category/:categoryId" component={Category} />
+//       </div>
+//   );
+// };
+//
+// render(<Root/>, document.querySelector('#root'));
 
-const Root = function() {
-  return (
-      <div>
-        <Route exact path="/" component={App} />
-        <Route exact path="/chart" component={Chart} />
-        <Route path="/search/:searchTerm" component={App} />
-        <Route path="/beer/:beerId" component={Single} />
-        <Route path="/category/:categoryId" component={Category} />
+
+import React from 'react';
+import _ from 'lodash';
+import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
+import './App.css';
+
+const API_KEY = 'AIzaSyCT5YNj0WpEUrt_4K8b3GZ6NoBZTOImXMA';
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {videos: [], selectedVideo: null};
+    this.videoSearch('Guinness');
+  }
+
+  videoSearch (term) {
+    YTSearch({key:API_KEY, term: term}, videos => {
+      this.setState({videos: videos, selectedVideo:videos[0]});
+    });
+  }
+
+
+  render() {
+    this.state.selectedVideo ? console.log(this.state.selectedVideo.id) : console.log(this.state.selectedVideo);
+
+
+    const videoSearch = _.debounce(term => {
+      this.videoSearch(term);
+    }, 300);
+
+    return (
+      <div className="App">
+        <h5>Youtube Search:</h5>
+        <VideoDetail video={this.state.selectedVideo}/>
+
       </div>
-  );
-};
+    );
+  }
+}
 
-render(<Root/>, document.querySelector('#root'));
+export default App;
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import React from 'react';
+
+const VideoDetail = ( {video} ) => {
+  if (!video) { return <div>Loading...</div>;}
+
+  const videoId = video.id.videoId;
+  const url=`https://www.youtube.com/embed/${videoId}`;
+  // console.log(videoId);
+  return (
+    <div>
+      <iframe src={url}></iframe>
+      <div>{video.snippet.title}</div>
+      <div>{video.snippet.description}</div>
+    </div>
+  )
+}
+
+export default VideoDetail;

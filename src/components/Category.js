@@ -15,7 +15,7 @@ const Category = (props) => {
     if(e.style && e.style.category.name === labels[props.categoryNu]) {
       beerName.push(e.name)
       beerId.push(e.id)
-    } else if (e.style === undefined) {
+    } else if (e.style === undefined && props.categoryNu === 12) {
       beerName.push(e.name)
       beerId.push(e.id)
     }

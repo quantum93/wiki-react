@@ -38,7 +38,7 @@ class Youtube extends React.Component{
       return (
         <div>
           <h3>Video about your beer: {this.props.beerName}</h3>
-          <div class="your-centered-div">
+          <div className="your-centered-div">
             <iframe width="640" height="360" src={url}></iframe>
           </div>
           <div style={details}>

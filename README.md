@@ -34,7 +34,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 a) npm install request
 b) https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US (for CORS error fix in local machine only)
 c) npm install jquery --save
-d) 
+d)
 
 ## About API
 Full list in BreweryDB
@@ -52,6 +52,10 @@ https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
 ## How to pass props to components in React
 
 https://www.robinwieruch.de/react-pass-props-to-component
+
+## how to deploy react app to google cloud
+
+https://medium.com/tech-tajawal/deploying-react-app-to-google-app-engine-a6ea0d5af132
 
 ## Available Scripts
 

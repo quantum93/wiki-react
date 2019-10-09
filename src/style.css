@@ -173,3 +173,10 @@ padding: 2rem;
 .search form > *[type="text"] {
   flex-grow: 10;
 }
+
+.your-centered-div {
+    max-width: 640px; /* you have to have a size or this method doesn't work */
+    max-height: 360px;
+    margin-right: auto;
+    margin-left: auto;
+}

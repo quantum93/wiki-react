@@ -3,21 +3,17 @@
 ![Main Page](/public/screenshot.png)
 
 ## Project Description
-1) Name of Project: Brewvana, web dictionary of beer industry
-2) Project’s Purpose or Goal: User can navigate the information about beer from API in single-page webapp environment.
-3) List the absolute minimum features the project requires to meet this purpose or goal:
-4) User can search/select beer by ABV or IBU or Hop, malt, yeast and etc....
-5) User can see the details of each beer based on API information including image and short description.
-6) PUNK API (https://punkapi.com/documentation/v2), React.js, HTML5/CSS/JavaScript, Chart.js, Python for web crawler
-To make sure everyone can access the API reliably, each IP that makes a request has a rate limit of 3600 requests per hour.
-This works out at 1 req/sec. This is an initial figure, if the servers hold up I will definitely consider bumping this number. You can see what the rate limit is and how many requests are remaining by looking at the rate limit headers sent in the response.
-7) Chart for ABV/IBU of every beer in API
-8) Interface with WebCrawler for each beer using python (https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f)
+Brewvana presents beer information from public API of brewerydb.com using React.js framework. It checks list of beer in API and display of beer's various information such as ABV, IBU, short description, and food pairing. It gives analysis of current API data itself such as data deposition activity, diversity of beer type and scattering chart of ABV vs. IBU information.
 
-9) https://stackoverflow.com/questions/32615926/use-javascript-to-get-a-random-image-from-google-images for image search from google
+* Name of Project: Brewvana, web dictionary of beer industry
+* Project’s Purpose or Goal: User can navigate the information about beer from API in single-page webapp environment.
+* User can search/select beer by ABV or IBU or Hop, malt, yeast and etc....
+* User can see the details of each beer based on API information including image and short description.
+* http://api.react.beer/v2 (move permanently http://www.brewerydb.com/developers) is API for this app.
+* Due to the limit of API access, chart in app is based on local json storage of API information. Please check the update in future (/src/components/db.json).
 
-10) http://www.netinstructions.com/how-to-make-a-simple-web-crawler-in-javascript-and-node-js/
 ## Component and Route Structure
+* This is starting component structure and eventually updated with more components as the project goes on.
 
 ![](component.png)
 
@@ -26,24 +22,15 @@ This works out at 1 req/sec. This is an initial figure, if the servers hold up I
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## About Crawler setup process
+* This project has some packages for web crawling but unused in final project. For further usage, you may ignore or delete it in package.json.
 
 a) npm install request
 b) https://chrome.google.com/webstore/detail/moesif-orign-cors-changer/digfbfaphojjndkpccljibejjbppifbc?hl=en-US (for CORS error fix in local machine only)
 c) npm install jquery --save
-d)
-
-## About API
-Full list in BreweryDB
-
-query in postman with API key --> https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8
-
-for page 1, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8&p=1
-for page 2, https://sandbox-api.brewerydb.com/v2/beers?key=55ea04b68426cd94bea8574c113936c8&p=2
-...
 
 ## About chart.js
-
-https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
+* In order to learn about chart.js, the following page is greatly helpful.
+* https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react
 
 ## How to pass props to components in React
 
